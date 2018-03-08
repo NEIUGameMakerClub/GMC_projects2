@@ -112,7 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  member: {r: 0, g: 0, b: 0, a: 0}
+  member: 0
+  explosionSound: {fileID: 8300000, guid: f48ebb12faa04c7488a801d6088c688f, type: 3}
 --- !u!136 &136262072936930498
 CapsuleCollider:
   m_ObjectHideFlags: 1
