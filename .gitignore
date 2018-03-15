@@ -4,10 +4,10 @@ EggMachine/[Tt]emp/
 /[Bb]uild/
 /[Bb]uilds/
 /Assets/AssetStoreTools*
-HelicopterRescue/*
-QuickGame/*
-TwoDGame/*
-EggMachine
+/HelicopterRescue/*
+/QuickGame/*
+/TwoDGame/*
+/EggMachine
 
 # Visual Studio 2015 cache directory
 /.vs/
