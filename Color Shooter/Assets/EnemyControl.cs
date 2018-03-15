@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyControl : MonoBehaviour {
-	public float movementSpeed = 5f;
+	public float movementSpeed;
 	public int member;
 	public AudioClip explosionSound;
 
-	private AudioSource source;
 	private GameObject target = null;
 	private GameObject spawn = null;
 
 	void Start(){
 		target = GameObject.FindWithTag ("Player");
 		spawn = GameObject.FindWithTag ("GameController");
-		source = target.GetComponent<AudioSource> ();
 		member = Random.Range (1, 6);
 		if (member == 1)
 			GetComponent<Renderer>().material.color = Color.red;
@@ -47,10 +45,8 @@ public class EnemyControl : MonoBehaviour {
 					if (rb != null)
 						rb.AddExplosionForce(500f, transform.position, 30f, 3.0F);
 				}
-				source.PlayOneShot (explosionSound, 1);
-				//source.Play ();
-				spawn.GetComponent<SpawnEnemy> ().current--;
-				spawn.GetComponent<SpawnEnemy> ().score++;
+				target.GetComponent<AudioSource> ().PlayOneShot (explosionSound, 1);
+				spawn.GetComponent<GameController> ().EnemyDeath();
 				Destroy (gameObject);
 			}
 		}

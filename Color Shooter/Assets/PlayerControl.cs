@@ -34,7 +34,7 @@ public class PlayerControl: MonoBehaviour
 	}
 	void FixedUpdate()
 	{
-		if(Input.GetButtonDown("Jump")){
+		if(Input.GetButtonDown("Jump") && transform.position.y <= 2f){
 			rb.AddForce (0,jumpHeight,0,ForceMode.Impulse);
 		}
 		var x = Input.GetAxis("Horizontal") * Time.deltaTime * movementSpeed;
