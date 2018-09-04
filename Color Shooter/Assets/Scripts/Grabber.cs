@@ -6,7 +6,7 @@ public class Grabber : MonoBehaviour {
 
 	public float range = 40f;
 	public float force = 2000f;
-
+	public float holdrange;
 
 	private RaycastHit hit;
 	private GameObject pickedUpObject = null;
@@ -33,7 +33,7 @@ public class Grabber : MonoBehaviour {
 					var newColor = new Color(grabcolor.r, grabcolor.g, grabcolor.b, 0.5f);
 					hit.collider.gameObject.GetComponent<Renderer>().material.color = newColor;
 
-					hit.collider.gameObject.transform.position=transform.position + transform.forward + transform.forward + transform.up; 
+					hit.collider.gameObject.transform.position= transform.position + (transform.forward*holdrange) + (transform.up*holdrange); 
 					//pickedUpObject.GetComponent<Rigidbody>().isKinematic = true;
 				}
 			}
